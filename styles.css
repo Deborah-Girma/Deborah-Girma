@@ -1,0 +1,375 @@
+/* Global styles */
+body {
+    font-family: 'Anonymous Pro', monospace; /* Use a hacker-style font */
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+    background-color: #000; /* Black background */
+    color: #4CAF50; /* Green text */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Darker background for header */
+    padding: 1em 2em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4CAF50; /* Green text */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #4CAF50; /* Green text */
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Yellow on hover */
+}
+
+/* Mobile Navigation Icon */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    cursor: pointer;
+    padding: 1em;
+    display: none;
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #4CAF50; /* Green */
+    margin-bottom: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-toggle:checked + .nav-toggle-label {
+    transform: rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+    opacity: 0;
+}
+
+/* Sections */
+section {
+    padding: 4em 2em;
+    text-align: center;
+}
+
+.section-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.section-content h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #4CAF50; /* Green text */
+}
+
+.section-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.section-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section-content ul li {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+
+/* Typewriter effect */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+}
+
+/* Call to Action buttons */
+.cta {
+    margin-top: 2em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0.5em;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 2em 0;
+    text-align: center;
+}
+
+/* Social links */
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links li {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+.social-links li a {
+    color: #a30762; /* Pink color for text */
+    font-size: 1.5em;
+    text-decoration: none; /* Remove underline from links */
+    cursor: pointer; /* Set cursor to pointer */
+}
+
+.social-links li a img {
+    width: 30px; /* Adjust size of icons */
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+    filter: brightness(0.5) saturate(100%) hue-rotate(330deg); /* Adjust hue for pink color */
+}
+
+.social-links li a:hover img {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .social-links li a img {
+        width: 25px; /* Adjust icon size for smaller screens */
+        height: 25px;
+    }
+}
+
+/* Theme Toggle Button */
+#themeToggle {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#themeToggle:hover {
+    color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+
+    .logo {
+        margin-bottom: 1em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        top: 70px; /* Adjust as per header height */
+        left: 0;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 1em 0;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    .nav-toggle-label span {
+        background-color: #4CAF50; /* Green */
+    }
+
+    section {
+        padding: 3em 1em;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+    }
+
+    .social-links li a img {
+        width: 25px; /* Adjust icon size for smaller screens */
+        height: 25px;
+    }
+}
+
+/* Additional styles for the contact form */
+.contact-form {
+    max-width: 600px; /* Adjust for larger screens if needed */
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #111; /* Dark background */
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green text */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4CAF50; /* Green text */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #333; /* Dark input background */
+    color: #fff; /* White text */
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #3e8e41;
+}
+
+#form-message {
+    text-align: center;
+    margin-top: 10px;
+    color: #4CAF50; /* Green text */
+}
+
+/* Media Queries for Responsive Design */
+
+@media only screen and (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-group label {
+        font-size: 0.8em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label {
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+    }
+}

@@ -12,116 +12,275 @@
         <div class="logo">
             <a href="#home">Dibora Girma</a>
         </div>
-        <nav>
+        <nav class="navc" >
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
                 <span></span>
             </label>
-            <ul>
+            <ul class="navc">
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><button id="themeToggle">Toggle Theme</button></li>
+               <li>
+    <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+    </label>
+</li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Sections -->
-    <section id="about" class="about-section">
-        <div class="section-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>Hello, I'm Dibora. I'm a <span class="green-text">Full Stack Developer</span>.</p>
-                <div>
-                <ul class="social-links">
-                    <li><a href="https://github.com/yourusername" target="_blank" rel="noopener"><img src="icons/githubp.svg" alt="GitHub"></a></li>
-                    <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener"><img src="icons/linkedin.svg" alt="LinkedIn"></a></li>
-                    <li><a href="https://twitter.com/yourusername" target="_blank" rel="noopener"><img src="icons/twitter.svg" alt="Twitter"></a></li>
-                    <li><a href="https://upwork.com/fl/yourusername" target="_blank" rel="noopener"><img src="icons/upwork.svg" alt="Upwork"></a></li>
-                    <li><a href="https://codepen.io/yourusername" target="_blank" rel="noopener"><img src="icons/codepen.svg" alt="CodePen"></a></li>
-                </ul>
-            </div>
-                <div class="cta">
-                    <a href="#contact" class="btn">Contact Me</a>
-                    <a href="#resume" class="btn">Get Resume</a>
-                </div>
-            </div>
+<!-- Main Sections -->
+<section id="about" class="about-section">
+    <div class="about-left">
+        <div class="about-intro-text">
+            
+            <p>Hello, I'm Dibora. I'm a <span class="green-text">Full Stack Developer</span>.</p>
         </div>
-        <div class="about-image">
-            <img src="path/to/your/image.jpg" alt="Dibora Girma">
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="section-content">
-            <h2>Education</h2>
-            <p>Details about your education.</p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="section-content">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>PHP</li>
-                <li>MySQL</li>
-                <li>Responsive Web Design</li>
+        <h2>Who am I?</h2>
+        <div><h3>I'm Dibora, a skilled Full Stack Web Developer specializing in building dynamic and responsive web applications. I work with HTML, CSS, JavaScript, PHP, React.js, Node.js, MySQL, and Firebase. I enjoy tackling challenges and am quick to learn new technologies. Currently seeking roles that match my passion for web development.</h3></div>
+    <br>
+        <div class="about-icons">
+            <ul class="social-links">
+                <li><a href="https://github.com/yourusername" target="_blank" rel="noopener"><img src="icons/githubg.svg" alt="GitHub"></a></li>
+                <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener"><img src="icons/linkeding.svg" alt="LinkedIn"></a></li>
+                <li><a href="https://twitter.com/yourusername" target="_blank" rel="noopener"><img src="icons/twitterg.svg" alt="Twitter"></a></li>
+                <li><a href="https://upwork.com/fl/yourusername" target="_blank" rel="noopener"><img src="icons/upworkg.svg" alt="Upwork"></a></li>
+                <li><a href="https://codepen.io/yourusername" target="_blank" rel="noopener"><img src="icons/facebookg.svg" alt="CodePen"></a></li>
             </ul>
         </div>
-    </section>
-
-    <section id="experience">
-        <div class="section-content">
-            <h2>Experience</h2>
-            <p>Details about your experience.</p>
+        <div class="contact-me">
+            <a href="#contact" class="btn">Contact Me</a>
+            <a href="#resume" class="btn">Get Resume</a>
         </div>
-    </section>
-
-    <section id="projects">
-        <div class="section-content">
-            <h2>Projects</h2>
-            <p>Details about your projects.</p>
+    </div>
+    <div class="about-right">
+        <div class="about-image">
+            <img src="img/dibo.jpg" alt="Dibora Girma">
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact" class="contact-form">
-        <div class="section-content">
-            <h2>Let's Connect!</h2>
-            <form id="contact-form" class="rounded-form">
-                <div class="form-group">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
+
+    
+<section id="education">
+    <div class="section-content">
+        <h2>Education</h2>
+        <div class="education-container">
+            <div class="education-column">
+                <div class="education-row">
+                    <h3>Institution 1</h3>
+                    <p>Details about Institution 1.</p>
                 </div>
-                <div class="form-group">
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="education-row">
+                    <h3>Institution 2</h3>
+                    <p>Details about Institution 2.</p>
                 </div>
-                <div class="form-group">
-                    <label for="message">Your Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="education-column">
+                <div class="education-row">
+                    <h3>Institution 3</h3>
+                    <p>Details about Institution 3.</p>
                 </div>
-                <button type="submit">Send Message</button>
-            </form>
-            <div id="form-message"></div>
+                <div class="education-row">
+                    <h3>Institution 4</h3>
+                    <p>Details about Institution 4.</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+<section id="skills">
+    <div class="section-content">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <img src="skills/html.svg" alt="HTML5">
+            </div>
+            <div class="skill-item">
+                <img src="skills/css.svg" alt="CSS3">
+            </div>
+            <div class="skill-item">
+                <img src="skills/php.svg" alt="JavaScript">
+            </div>
+            <div class="skill-item">
+                <img src="skills/mysql.svg" alt="PHP">
+            </div>
+            <div class="skill-item">
+                <img src="skills/javascript.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/java.svg" alt="Responsive Web Design">
+            </div>
+            <div class="skill-item">
+                <img src="skills/react.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/bootstrap.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/adobeaudition.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/firebase.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/git.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/tailwind.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/angular.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/csharp.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/c.svg" alt="MySQL">
+            </div>
+            <div class="skill-item">
+                <img src="skills/cplusplus.svg" alt="MySQL">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="experience">
+    <div class="section-content">
+        <h2>Experience</h2>
+        <div class="experience-columns">
+            <div class="experience-left">
+                <div class="experience-item">
+                    <h3>Job Title 1</h3>
+                    <p>Details about your job experience.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Job Title 2</h3>
+                    <p>Details about your job experience.</p>
+                </div>
+            </div>
+            <div class="experience-right">
+                <div class="experience-item">
+                    <h3>Job Title 3</h3>
+                    <p>Details about your job experience.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Job Title 4</h3>
+                    <p>Details about your job experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="projects">
+    <div class="section-content">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="column">
+                <div class="project-item">
+                    <h3>Project Title 1</h3>
+                    <p>Description of Project 1</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project Title 2</h3>
+                    <p>Description of Project 2</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project Title 3</h3>
+                    <p>Description of Project 3</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="project-item">
+                    <h3>Project Title 4</h3>
+                    <p>Description of Project 4</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project Title 5</h3>
+                    <p>Description of Project 5</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project Title 6</h3>
+                    <p>Description of Project 6</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact" class="contact-section">
+    <div class="section-content">
+        <div class="contact-top">
+            <h2>Contact Me</h2>
+        </div>
+        <div class="contact-columns">
+            <div class="contact-left">
+                <h2 class="intro-label">Get in touch</h2>
+                <form id="contact-form" class="rounded-form">
+                    <div class="form-group">
+                        <label for="name" class="intro-label">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="intro-label">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="intro-label">Your Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <div id="form-message"></div>
+            </div>
+            <div class="contact-right">
+                <h2>Contact Me</h2>
+                <ul class="contact-info">
+                    <li class="intro-label">
+                        <span><img src="icons/emailg.svg" alt="Email Icon"></span> diboragk12@gmail.com
+                    </li>
+                    <li class="intro-label">
+                        <span class="social-links"><img src="icons/phoneg.svg" alt="Phone Icon"></span> +251 962190546
+                    </li>
+                    <li class="intro-label">
+                        <span class="social-links"><img src="icons/addressg.svg" alt="Address Icon"></span> Addis Ababa, Ethiopia
+                    </li>
+                </ul>
+                <div class="social-links">
+                    <h3>Connect with Me</h3>
+                    <ul>
+                        <li><a href="https://github.com/yourusername" target="_blank" rel="noopener"><img src="icons/githubg.svg" alt="GitHub"></a></li>
+                        <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener"><img src="icons/linkeding.svg" alt="LinkedIn"></a></li>
+                        <li><a href="https://twitter.com/yourusername" target="_blank" rel="noopener"><img src="icons/twitterg.svg" alt="Twitter"></a></li>
+                        <li><a href="https://upwork.com/fl/yourusername" target="_blank" rel="noopener"><img src="icons/upworkg.svg" alt="Upwork"></a></li>
+                        <li><a href="https://codepen.io/yourusername" target="_blank" rel="noopener"><img src="icons/facebookg.svg" alt="CodePen"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
 
     <!-- Footer -->
-    <footer>
-        <ul class="social-links">
-            <li><a href="https://github.com/yourusername" target="_blank" rel="noopener"><img src="icons/github.svg" alt="GitHub"></a></li>
-            <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener"><img src="icons/linkedin.svg" alt="LinkedIn"></a></li>
-            <li><a href="https://twitter.com/yourusername" target="_blank" rel="noopener"><img src="icons/twitter.svg" alt="Twitter"></a></li>
-            <li><a href="https://upwork.com/fl/yourusername" target="_blank" rel="noopener"><img src="icons/upwork.svg" alt="Upwork"></a></li>
-            <li><a href="https://codepen.io/yourusername" target="_blank" rel="noopener"><img src="icons/codepen.svg" alt="CodePen"></a></li>
-        </ul>
-    </footer>
+   <!-- Footer -->
+   <footer>
+    <h3 class="section-content">Copyright © 2024 All Rights Reserved to Dibora Girma</h3>
+</footer>
 
     <!-- Scripts -->
     <script src="scripts.js"></script>

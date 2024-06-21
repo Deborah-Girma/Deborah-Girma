@@ -45,7 +45,7 @@ form.addEventListener('submit', async (event) => {
 
     try {
         const serviceId = 'service_0rmy90p'; // Replace with your EmailJS service ID
-        const templateId = 'template_qy3zev9'; // Replace with your EmailJS template ID
+        const templateId = 'template_lwakpvf'; // Replace with your EmailJS template ID
         const publicKey = 'Lz6kSoOMC0FvqH2aZ'; // Replace with your EmailJS public key
 
         emailjs.init(publicKey);

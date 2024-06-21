@@ -338,11 +338,15 @@ section {
 .projects-grid {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
 .column {
-    flex-basis: calc(50% - 2em); /* Adjust column width */
+   display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;/* Adjust column width */
 }
 
 .project-item {

@@ -1,8 +1,11 @@
 <?php
+
+// Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Set your EmailJS details
     $service_id = "service_7jbizim"; // Replace with your EmailJS service ID
-    $template_id = "template_x95mb3t"; // Replace with your EmailJS template ID
+    $template_id = "template_op60u2h"; // Replace with your EmailJS template ID
+    $public_key = "ousKG8gZgvQHMGkSn"; // Replace with your EmailJS public key
 
     // Get form data
     $name = $_POST['name'];
@@ -13,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = array(
         'service_id' => $service_id,
         'template_id' => $template_id,
-        'user_id' => 'user_YOUR_USER_ID', // Replace with your EmailJS user ID if required
+        'user_id' => $public_key,
         'template_params' => array(
             'user_name' => $name,
             'user_email' => $email,
@@ -21,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         )
     );
 
-    // Send the request
+    // Send the request using cURL
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://api.emailjs.com/api/v1.0/email/send');
     curl_setopt($ch, CURLOPT_POST, true);
@@ -41,5 +44,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<div class="alert alert-danger">Sorry, there was an error sending your message. Please try again later.</div>';
     }
 }
-?>
 
+?>

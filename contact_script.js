@@ -1,24 +1,23 @@
 const form = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
-const submitButton = document.querySelector('.rounded-form button'); // Update selector for submit button
+const submitButton = document.querySelector('.rounded-form button');
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    // Input validation (enhanced)
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const messageInput = document.getElementById('message');
 
     let isValid = true;
-    formMessage.innerHTML = ''; // Clear previous messages
+    formMessage.innerHTML = '';
 
     if (nameInput.value.trim() === '') {
         isValid = false;
-        nameInput.classList.add('error'); // Add error class for styling (CSS needed)
+        nameInput.classList.add('error');
         formMessage.innerHTML += '<p>Please enter your name.</p>';
     } else {
-        nameInput.classList.remove('error'); // Remove error class if corrected
+        nameInput.classList.remove('error');
     }
 
     if (!validateEmail(emailInput.value)) {
@@ -38,11 +37,11 @@ form.addEventListener('submit', async (event) => {
     }
 
     if (!isValid) {
-        return; // Prevent form submission if validation fails
+        return;
     }
 
-    submitButton.disabled = true; // Disable button to prevent multiple submissions
-    submitButton.textContent = 'Sending...'; // Update button text
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
 
     try {
         const serviceId = 'service_0rmy90p'; // Replace with your EmailJS service ID
@@ -59,11 +58,11 @@ form.addEventListener('submit', async (event) => {
 
         const response = await emailjs.send(serviceId, templateId, formData);
 
-        console.log('Email sent response:', response); // Log response for debugging
+        console.log('Email sent response:', response);
 
         if (response.status === 200) {
             formMessage.innerHTML = 'Message sent successfully!';
-            form.reset(); // Optional: Clear the form after successful submission
+            form.reset();
         } else {
             throw new Error('Email sending failed with status: ' + response.status);
         }
@@ -71,12 +70,11 @@ form.addEventListener('submit', async (event) => {
         console.error('Error sending message:', error);
         formMessage.innerHTML = 'There was an error sending your message. Please try again later.';
     } finally {
-        submitButton.disabled = false; // Re-enable button
-        submitButton.textContent = 'Send Message'; // Restore button text
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
     }
 });
 
-// Email validation function (improved)
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);

@@ -1,30 +1,31 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Set your EmailJS details
+    $service_id = "service_7jbizim"; // Replace with your EmailJS service ID
+    $template_id = "template_x95mb3t"; // Replace with your EmailJS template ID
+
+    // Get form data
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    // Send email using EmailJS
-    $service_id = "service_7jbizim"; // Replace with your EmailJS service ID
-    $template_id = "template_op60u2h"; // Replace with your EmailJS template ID
-    $user_id = "ousKG8gZgvQHMGkSn"; // Replace with your EmailJS user ID
-
-    // Prepare data to be sent to EmailJS
-    $emailjs_data = array(
+    // Create EmailJS API request data
+    $data = array(
         'service_id' => $service_id,
         'template_id' => $template_id,
-        'user_id' => $user_id,
+        'user_id' => 'user_YOUR_USER_ID', // Replace with your EmailJS user ID if required
         'template_params' => array(
-            'name' => $name,
-            'email' => $email,
-            'message' => $message
+            'user_name' => $name,
+            'user_email' => $email,
+            'message_html' => $message
         )
     );
 
-    // Send request to EmailJS API
-    $ch = curl_init('https://api.emailjs.com/api/v1.0/email/send');
+    // Send the request
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://api.emailjs.com/api/v1.0/email/send');
     curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($emailjs_data));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
@@ -41,3 +42,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+

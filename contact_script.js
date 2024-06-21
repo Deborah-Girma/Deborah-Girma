@@ -1,6 +1,6 @@
 const form = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
-const submitButton = document.querySelector('.contact-form button'); // More specific selector
+const submitButton = document.querySelector('.rounded-form button'); // Update selector for submit button
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -45,23 +45,23 @@ form.addEventListener('submit', async (event) => {
     submitButton.textContent = 'Sending...'; // Update button text
 
     try {
-        const serviceId = 'your_service_id'; // Replace with your EmailJS service ID
-        const templateId = 'your_template_id'; // Replace with your EmailJS template ID
-        const publicKey = 'your_public_key'; // Replace with your EmailJS public key
+        const serviceId = 'service_7jbizim'; // Replace with your EmailJS service ID
+        const templateId = 'template_op60u2h'; // Replace with your EmailJS template ID
+        const publicKey = 'ousKG8gZgvQHMGkSn'; // Replace with your EmailJS public key
 
         emailjs.init(publicKey);
 
         const formData = {
-            from_name: document.getElementById('name').value,
-            from_email: document.getElementById('email').value,
-            message: document.getElementById('message').value
+            from_name: nameInput.value,
+            from_email: emailInput.value,
+            message_html: messageInput.value
         };
 
         const response = await emailjs.send(serviceId, templateId, formData);
 
         if (response.status === 200) {
             formMessage.innerHTML = 'Message sent successfully!';
-            form.reset();
+            form.reset(); // Optional: Clear the form after successful submission
         } else {
             throw new Error('Email sending failed with status: ' + response.status);
         }

@@ -59,6 +59,8 @@ form.addEventListener('submit', async (event) => {
 
         const response = await emailjs.send(serviceId, templateId, formData);
 
+        console.log('Email sent response:', response); // Log response for debugging
+
         if (response.status === 200) {
             formMessage.innerHTML = 'Message sent successfully!';
             form.reset(); // Optional: Clear the form after successful submission

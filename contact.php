@@ -5,9 +5,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
 
     // Send email using EmailJS
-    $service_id = "YOUR_EMAILJS_SERVICE_ID"; // Replace with your EmailJS service ID
-    $template_id = "YOUR_EMAILJS_TEMPLATE_ID"; // Replace with your EmailJS template ID
-    $user_id = "YOUR_EMAILJS_USER_ID"; // Replace with your EmailJS user ID
+    $service_id = "service_7jbizim"; // Replace with your EmailJS service ID
+    $template_id = "template_op60u2h"; // Replace with your EmailJS template ID
+    $user_id = "ousKG8gZgvQHMGkSn"; // Replace with your EmailJS user ID
 
     // Prepare data to be sent to EmailJS
     $emailjs_data = array(

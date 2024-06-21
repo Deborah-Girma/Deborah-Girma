@@ -281,28 +281,6 @@
 
     <!-- Scripts -->
     <script src="scripts.js"></script>
-    <script>
-    // Replace with your EmailJS service ID
-    const serviceId = 'service_7jbizim';
-
-    // Replace with your EmailJS template ID
-    const templateId = 'template_x95mb3t';
-
-    document.getElementById('contact-form').addEventListener('submit', (event) => {
-      event.preventDefault();
-      emailjs.sendForm(serviceId, templateId, {
-        from_name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value,
-      })
-        .then(() => {
-          alert("Your message has been sent successfully!");
-          document.getElementById('contact-form').reset();
-        })
-        .catch(() => {
-          alert("An error occurred while sending your message. Please try again later.");
-        });
-    });
-  </script>
+    <script src="contact_script.js"></script>
 </body>
 </html>

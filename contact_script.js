@@ -45,9 +45,9 @@ form.addEventListener('submit', async (event) => {
     submitButton.textContent = 'Sending...'; // Update button text
 
     try {
-        const serviceId = 'service_7jbizim'; // Replace with your EmailJS service ID
-        const templateId = 'template_op60u2h'; // Replace with your EmailJS template ID
-        const publicKey = 'ousKG8gZgvQHMGkSn'; // Replace with your EmailJS public key
+        const serviceId = 'service_0rmy90p'; // Replace with your EmailJS service ID
+        const templateId = 'template_qy3zev9'; // Replace with your EmailJS template ID
+        const publicKey = 'Lz6kSoOMC0FvqH2aZ'; // Replace with your EmailJS public key
 
         emailjs.init(publicKey);
 

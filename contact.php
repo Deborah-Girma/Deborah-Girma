@@ -1,25 +1,43 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST["name"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $message = htmlspecialchars($_POST["message"]);
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
-    // Database connection
-    $conn = new mysqli("localhost", "root", "", "portfolio");
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    // Send email using EmailJS
+    $service_id = "YOUR_EMAILJS_SERVICE_ID"; // Replace with your EmailJS service ID
+    $template_id = "YOUR_EMAILJS_TEMPLATE_ID"; // Replace with your EmailJS template ID
+    $user_id = "YOUR_EMAILJS_USER_ID"; // Replace with your EmailJS user ID
 
-    $stmt = $conn->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $message);
+    // Prepare data to be sent to EmailJS
+    $emailjs_data = array(
+        'service_id' => $service_id,
+        'template_id' => $template_id,
+        'user_id' => $user_id,
+        'template_params' => array(
+            'name' => $name,
+            'email' => $email,
+            'message' => $message
+        )
+    );
 
-    if ($stmt->execute()) {
-        echo "Message sent successfully!";
+    // Send request to EmailJS API
+    $ch = curl_init('https://api.emailjs.com/api/v1.0/email/send');
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($emailjs_data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    // Check if email was sent successfully
+    $result = json_decode($response, true);
+    if ($result['status'] == 'success') {
+        // Email sent successfully
+        echo '<div class="alert alert-success">Your message has been sent!</div>';
     } else {
-        echo "Error: " . $stmt->error;
+        // Failed to send email
+        echo '<div class="alert alert-danger">Sorry, there was an error sending your message. Please try again later.</div>';
     }
-
-    $stmt->close();
-    $conn->close();
 }
 ?>

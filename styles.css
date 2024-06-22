@@ -228,9 +228,10 @@ section {
 }
 
 #skills .section-content {
-    max-width: 1200px;
+    max-width: 100%; /* Adjust max-width as needed */
     margin: auto;
     text-align: center;
+    overflow: hidden; /* Hide overflow for smoother animation */
 }
 
 #skills h2 {
@@ -241,16 +242,14 @@ section {
 
 .skills-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    overflow: hidden; /* Ensure items that overflow are hidden */
+    overflow: hidden; /* Hide overflowing content */
 }
 
 .skill-item {
-    width: 120px; /* Adjust width of each skill item */
-    margin: 1em;
-    animation: moveRightToLeft 10s linear infinite; /* Adjust animation duration and timing function */
+    flex: 0 0 auto; /* Prevent items from growing */
+    margin: 0 1em; /* Adjust margin as needed */
+    animation: slideRight 10s linear infinite; /* Adjust animation duration and timing function */
+    position: relative; /* Required for hover effect */
 }
 
 .skill-item img {
@@ -260,7 +259,7 @@ section {
 }
 
 /* Animation keyframes */
-@keyframes moveRightToLeft {
+@keyframes slideRight {
     0% {
         transform: translateX(0%);
     }
@@ -269,18 +268,22 @@ section {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .skill-item {
-        width: 100px; /* Adjust for smaller screens */
-    }
-}
-
 /* Pause animation on hover */
 .skill-item:hover {
     animation-play-state: paused;
 }
 
+/* Resume animation on hover out */
+.skill-item:not(:hover) {
+    animation-play-state: running;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skill-item {
+        margin: 0 0.5em; /* Adjust margin for smaller screens */
+    }
+}
 
 
 

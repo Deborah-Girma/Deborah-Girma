@@ -6,6 +6,8 @@ body {
     transition: background 0.3s, color 0.3s;
     background-color: #080005;
     color: #4CAF50;
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering for better readability */
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -76,12 +78,8 @@ nav ul li a:hover {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-.nav-toggle:checked + .nav-toggle-label {
-    transform: rotate(45deg);
-}
-
 .nav-toggle:checked + .nav-toggle-label span {
-    opacity: 0;
+    transform: rotate(45deg);
 }
 
 /* Section Styles */
@@ -425,17 +423,19 @@ section {
 .social-links ul li a img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s;
 }
 
 .social-links ul li a:hover img {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-/* Form Styles */
 .rounded-form {
-    margin-top: 2em;
-    margin: auto;
+    background-color: #080005;
+    color: #0f0;
+    border-radius: 10px;
+    border: 2px solid #4CAF50;
+    padding: 2em;
 }
 
 .rounded-form h3 {
@@ -525,4 +525,14 @@ form button[type="submit"]:hover {
     .contact-right {
         flex-basis: 100%;
     }
+
+    .contact-right {
+        margin-left: 0;
+    }
+}
+
+/* Ensuring consistency in icons */
+img, svg {
+    max-width: 100%;
+    height: auto;
 }

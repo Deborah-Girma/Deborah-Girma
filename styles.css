@@ -119,40 +119,41 @@ section {
 /* About Section */
 .about-section {
     display: flex;
-    flex-direction: column; /* Stack items vertically on small screens */
-    gap: 2em; /* Spacing between .about-left and .about-right */
-    padding: 2em; /* Add some padding around the content */
-}
-
-@media (min-width: 768px) {
-    .about-section {
-        flex-direction: row; /* Display items side by side on larger screens */
-        align-items: center; /* Center items vertically */
-    }
+    flex-direction: column; /* Adjust to column layout on small screens */
+    align-items: center;
+    text-align: center; /* Center text for both sides */
 }
 
 .about-left,
 .about-right {
-    flex: 1; /* Both sections take up equal space */
     padding: 1em;
-    text-align: center; /* Center text by default */
-}
-
-.about-left {
-    order: 1; /* Change the order on small screens to have .about-left first */
-    text-align: left; /* Align text to the left */
-}
-
-.about-right {
-    order: 2; /* Change the order on small screens to have .about-right second */
-    text-align: right; /* Align text to the right */
 }
 
 .about-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 150px;
+    max-height: 300px; /* Limit image height for responsiveness */
+    border-radius: 150%; /* Adjust border-radius for circular effect */
 }
+
+@media only screen and (min-width: 768px) {
+    /* For medium and larger screens */
+    .about-section {
+        flex-direction: row; /* Display items side by side */
+        justify-content: center;
+    }
+
+    .about-left,
+    .about-right {
+        flex: 1; /* Take equal space */
+        text-align: left;
+    }
+
+    .about-right {
+        text-align: right;
+    }
+}
+
 
 
 /* Education Section */

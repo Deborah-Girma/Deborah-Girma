@@ -1,157 +1,458 @@
-/* General Styles */
+/* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #121212;
-    color: #f0f0f0;
+  font-family: 'Anonymous Pro', monospace; /* Use a hacker-style font */
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+  background-color: #080005; /* Black background */
+  color: #4CAF50; /* Green text */
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  text-decoration: none;
+  color: inherit;
 }
 
+/* Header styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Darker background for header */
+  padding: 1em 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .logo a {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #0f0; /* Green text */
 }
 
-.navc {
-    display: flex;
-    list-style: none;
-    gap: 15px;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
+nav ul li {
+  margin: 0 1em;
+}
+
+nav ul li a {
+  font-weight: bold;
+  color: rgba(0, 255, 0, 0.932); /* Green text */
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: rgb(40, 214, 40); /* Yellow on hover */
+}
+
+/* Mobile Navigation Icon */
 .nav-toggle {
-    display: none;
+  display: none;
 }
 
 .nav-toggle-label {
-    display: none;
+  cursor: pointer;
+  padding: 1em;
+  display: none;
 }
 
-/* Responsive Menu */
-@media (max-width: 768px) {
-    .navc {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #1a1a1a;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        width: 200px;
-    }
-
-    .navc.show {
-        display: flex;
-    }
-
-    .nav-toggle-label {
-        display: block;
-        cursor: pointer;
-    }
-
-    .nav-toggle-label span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px 0;
-    }
+.nav-toggle-label span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #4CAF50; /* Green */
+  margin-bottom: 5px;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Section Styles */
+.nav-toggle:checked + .nav-toggle-label {
+  transform: rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+  opacity: 0;
+}
+
+/* Sections */
+section {
+  padding: 4em 2em;
+  text-align: center;
+}
+
 .section-content {
-    padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
 }
 
+.section-content h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #0f0; /* Green text */
+}
+
+.section-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.section-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.section-content ul li {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+/* About Section */
 .about-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.about-left, .about-right {
-    flex: 1 1 45%;
-    max-width: 45%;
+.about-left,
+.about-right {
+  flex: 1;
+  padding: 1em;
+}
+
+.about-left {
+  text-align: left;
+}
+
+.about-right {
+  text-align: right;
 }
 
 .about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 150px;
 }
 
-.about-icons, .contact-info {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
+/* Education Section */
+#education {
+  padding: 4em 2em;
+  color: #4CAF50; /* Match the global text color */
 }
 
+#education .section-content {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+#education h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #0f0; /* Green text */
+}
+
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.education-column {
+  flex: 1;
+  min-width: 300px; /* Adjust based on the desired minimum width */
+}
+
+.education-row {
+  border: 1px solid #0f0; /* Green border */
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.education-row h3 {
+  margin-top: 0;
+  color: #0f0; /* Green text */
+}
+
+.education-row p {
+  margin-bottom: 0;
+  font-size: 1.1em;
+}
+
+/* Responsive Design for Education Section */
+@media (max-width: 768px) {
+  #education .section-content {
+    padding: 3em 1em;
+  }
+
+  .education-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .education-column {
+    min-width: 100%;
+  }
+}
+
+/* Skills Section */
+#skills {
+  padding: 4em 2em;
+  color: #4CAF50; /* Match the global text color */
+}
+
+#skills .section-content {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #0f0; /* Green text */
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skill-item {
+  width: 120px; /* Adjust width of each skill item */
+  margin: 1em;
+  animation: moveRightToLeft 5s linear infinite; /* Adjust animation duration and timing function */
+}
+
+.skill-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Animation keyframes */
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive Design for Skills Section */
+@media (max-width: 768px) {
+  #skills .section-content {
+    padding: 3em 1em;
+  }
+
+  .skill-item {
+    width: 100px; /* Adjust for smaller screens */
+  }
+}
+
+/* Experience Section */
+#experience {
+  padding: 4em 2em;
+  color: #4CAF50; /* Match the global text color */
+}
+
+#experience .section-content {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+#experience h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #0f0; /* Green text */
+}
+
+.experience-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.experience-left,
+.experience-right {
+  flex-basis: calc(50% - 2em); /* Adjust column width */
+  padding: 1em;
+  text-align: left;
+}
+
+.experience-item {
+  margin-bottom: 2em;
+  border: 2px solid #4CAF50; /* Green border */
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.experience-item h3 {
+  margin-bottom: 0.5em;
+  color: #0f0; /* Green text */
+}
+
+/* Responsive Design for Experience Section */
+@media (max-width: 768px) {
+  #experience .section-content {
+    padding: 3em 1em;
+  }
+
+  .experience-left,
+  .experience-right {
+    flex-basis: 100%; /* Full width on smaller screens */
+  }
+}
+
+/* Projects Section */
+#projects {
+  padding: 4em 2em;
+  color: #4CAF50; /* Match the global text color */
+}
+
+#projects .section-content {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #0f0; /* Green text */
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.projects-column {
+  flex: 1;
+  min-width: 300px; /* Adjust based on the desired minimum width */
+}
+
+.project-row {
+  border: 1px solid #0f0; /* Green border */
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.project-row h3 {
+  margin-top: 0;
+  color: #0f0; /* Green text */
+}
+
+.project-row p {
+  margin-bottom: 0;
+  font-size: 1.1em;
+}
+
+/* Responsive Design for Projects Section */
+@media (max-width: 768px) {
+  #projects .section-content {
+    padding: 3em 1em;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-column {
+    min-width: 100%;
+  }
+}
+
+/* Contact Section */
 .contact-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  padding: 4em 2em;
+  background-color: #080005; /* Dark background */
+  color: #4CAF50; /* Green text */
+  text-align: center; /* Center align the content */
 }
 
-.contact-left, .contact-right {
-    flex: 1 1 45%;
-    max-width: 45%;
+.contact-section .section-content {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #0f0; /* Green text */
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  max-width: 600px;
+  margin: auto;
 }
 
-.skills-list, .experience-columns, .projects-container, .education-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+.input-field {
+  width: 100%;
+  padding: 0.8em;
+  margin: 0.5em 0;
+  border: 2px solid #4CAF50; /* Green border */
+  background-color: transparent;
+  color: #4CAF50; /* Green text */
+  border-radius: 5px;
 }
 
-.skill-item, .experience-item, .project-row, .education-row {
-    flex: 1 1 200px;
-    text-align: center;
+.input-field:focus {
+  outline: none;
+  border-color: #0f0; /* Green border on focus */
 }
 
-.btn {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.textarea-field {
+  width: 100%;
+  padding: 0.8em;
+  margin: 0.5em 0;
+  border: 2px solid #4CAF50; /* Green border */
+  background-color: transparent;
+  color: #4CAF50; /* Green text */
+  border-radius: 5px;
+  resize: vertical;
 }
 
-.btn:hover {
-    background-color: #555;
+.textarea-field:focus {
+  outline: none;
+  border-color: #0f0; /* Green border on focus */
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .about-left, .about-right, .contact-left, .contact-right {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-    
-    .skill-item, .experience-item, .project-row, .education-row {
-        flex: 1 1 100%;
-    }
+.submit-btn {
+  background-color: #4CAF50; /* Green background */
+  color: #080005; /* Dark text */
+  padding: 0.8em 2em;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0f0; /* Light green background on hover */
+  color: #080005; /* Dark text on hover */
 }

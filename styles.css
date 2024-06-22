@@ -132,8 +132,7 @@ section {
 .about-image img {
     max-width: 100%;
     height: auto;
-    max-height: 400px; /* Limit image height for responsiveness */
-    border-radius: 200px; /* Adjust border-radius for circular effect */
+    border-radius: 170px; /* Adjust border-radius for circular effect */
 }
 
 @media only screen and (min-width: 768px) {
@@ -151,6 +150,9 @@ section {
 
     .about-right {
         text-align: right;
+    }
+     .about-left {
+        text-align: center;
     }
 }
 

@@ -151,8 +151,6 @@ section {
 .about-image img {
     max-width: 100%;
     height: auto;
-    display: block; /* Ensure image behaves correctly within flexbox */
-    margin: 0 auto; /* Center the image horizontally */
     border-radius: 150%; /* Make the image round */
 }
 

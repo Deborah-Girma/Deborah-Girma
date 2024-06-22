@@ -456,3 +456,7 @@ section {
   background-color: #0f0; /* Light green background on hover */
   color: #080005; /* Dark text on hover */
 }
+.social-links li a img {
+  width: 25px; /* Adjust icon size for smaller screens */
+  height: 25px;
+}

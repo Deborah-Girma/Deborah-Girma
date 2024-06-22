@@ -132,6 +132,7 @@ section {
 .about-image img {
     max-width: 100%;
     height: auto;
+    max-hight: 1000px;
     border-radius: 170px; /* Adjust border-radius for circular effect */
 }
 

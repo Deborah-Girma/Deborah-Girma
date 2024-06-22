@@ -223,8 +223,7 @@ section {
 /* Skills Section */
 #skills {
     padding: 4em 2em;
-    /* Match the global background */
-    color: #4CAF50; /* Match the global text color */
+    color: #4CAF50;
 }
 
 #skills .section-content {
@@ -236,20 +235,19 @@ section {
 #skills h2 {
     font-size: 2em;
     margin-bottom: 1em;
-    color: #0f0; /* Green text */
+    color: #0f0;
 }
 
 .skills-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items from the start */
+    overflow: hidden; /* Hide overflow for single line */
 }
 
 .skill-item {
-    width: 120px; /* Adjust width of each skill item */
-    margin: 1em;
-    animation: moveRightToLeft 5s linear infinite; /* Adjust animation duration and timing function */
+    width: 120px;
+    margin: 0 1em; /* Adjust margin for spacing */
+    animation: moveRightToLeft 10s linear infinite;
 }
 
 .skill-item img {
@@ -258,20 +256,24 @@ section {
     display: block;
 }
 
-/* Animation keyframes */
 @keyframes moveRightToLeft {
     0% {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
     100% {
         transform: translateX(-100%);
     }
 }
 
+/* Pause animation on hover */
+.skill-item:hover {
+    animation-play-state: paused;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .skill-item {
-        width: 100px; /* Adjust for smaller screens */
+        width: 80px; /* Adjust for smaller screens */
     }
 }
 

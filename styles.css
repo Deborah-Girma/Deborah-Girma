@@ -151,7 +151,7 @@ section {
 .about-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 150%; /* Make the image round */
+    border-radius: 150px;
 }
 
 

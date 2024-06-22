@@ -133,7 +133,7 @@ section {
     max-width: 100%;
     height: auto;
     max-height: 400px; /* Limit image height for responsiveness */
-    border-radius: 250%; /* Adjust border-radius for circular effect */
+    border-radius: 400%; /* Adjust border-radius for circular effect */
 }
 
 @media only screen and (min-width: 768px) {

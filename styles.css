@@ -119,29 +119,44 @@ section {
 /* About Section */
 .about-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack items vertically on small screens */
+    gap: 2em; /* Spacing between .about-left and .about-right */
+    padding: 2em; /* Add some padding around the content */
+}
+
+@media (min-width: 768px) {
+    .about-section {
+        flex-direction: row; /* Display items side by side on larger screens */
+        align-items: center; /* Center items vertically */
+    }
 }
 
 .about-left,
 .about-right {
-    flex: 1;
+    flex: 1; /* Both sections take up equal space */
     padding: 1em;
+    text-align: center; /* Center text by default */
 }
 
 .about-left {
-    text-align: left;
+    order: 1; /* Change the order on small screens to have .about-left first */
+    text-align: left; /* Align text to the left */
 }
 
 .about-right {
-    text-align: right;
+    order: 2; /* Change the order on small screens to have .about-right second */
+    text-align: right; /* Align text to the right */
 }
 
 .about-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 150px;
+    max-height: 300px; /* Limit the maximum height of the image */
+    display: block; /* Ensure image behaves correctly within flexbox */
+    margin: 0 auto; /* Center the image horizontally */
+    border-radius: 50%; /* Make the image round */
 }
+
 
 /* Education Section */
 #education {

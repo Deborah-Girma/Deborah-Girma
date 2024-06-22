@@ -240,15 +240,16 @@ section {
 }
 
 .skills-list {
-    display: flex;
     overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Required for absolute positioning */
 }
 
 .skill-item {
     width: 120px; /* Adjust width of each skill item */
     margin: 1em;
     flex-shrink: 0; /* Prevent items from shrinking */
-    position: relative; /* Required for z-index */
+    position: absolute; /* Positioning for animation */
+    animation: slideRight 20s linear infinite; /* Adjust animation duration and timing function */
 }
 
 .skill-item img {
@@ -265,11 +266,6 @@ section {
     100% {
         transform: translateX(-100%);
     }
-}
-
-/* Animation */
-.skill-item {
-    animation: slideRight 20s linear infinite;
 }
 
 /* Responsive Design */

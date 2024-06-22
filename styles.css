@@ -248,7 +248,7 @@ section {
     width: 120px; /* Adjust width of each skill item */
     margin: 1em;
     flex-shrink: 0; /* Prevent items from shrinking */
-    animation: slideRight 20s linear infinite; /* Adjust animation duration and timing function */
+    position: relative; /* Required for z-index */
 }
 
 .skill-item img {
@@ -267,12 +267,18 @@ section {
     }
 }
 
+/* Animation */
+.skill-item {
+    animation: slideRight 20s linear infinite;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .skill-item {
         width: 80px; /* Adjust for smaller screens */
     }
 }
+
 
 
 
